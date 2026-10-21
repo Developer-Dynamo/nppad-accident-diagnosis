@@ -1,0 +1,5 @@
+,0
+RandomForest,0.905
+CNN1D,0.785
+LSTM,0.7865
+CNN_LSTM,0.8107
