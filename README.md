@@ -56,7 +56,7 @@ Six classes n'ont qu'une seule simulation (ATWS, LACP, LOF, Normal, SP, TT) et m
 
 | Perturbation | Random Forest | CNN 1D | LSTM | CNN-LSTM |
 |---|---|---|---|---|
-| Aucune | **0,765** | 0,693 | 0,677 | 0,692 |
+| Aucune | **0,769** | 0,693 | 0,677 | 0,692 |
 | Bruit σ = 0,1 | 0,343 | **0,695** | 0,677 | 0,693 |
 | Bruit σ = 0,3 | 0,279 | **0,694** | 0,672 | 0,675 |
 | Bruit σ = 0,5 | 0,272 | **0,702** | 0,661 | 0,679 |
@@ -90,7 +90,7 @@ Part des fenêtres correctement diagnostiquées sur 8 simulations jamais utilis�
 - Sur données propres, le **Random Forest est le meilleur modèle** (F1 macro 0,769), devant les trois réseaux (0,68 à 0,69).
 - Face au **bruit**, les réseaux restent stables alors que le Random Forest s'effondre (0,27).
 - Avec des **capteurs en panne**, le Random Forest reste meilleur ; CNN-LSTM est le plus résistant des réseaux.
-- Dix classes sur 18 sont reconnues parfaitement par le Random Forest. Les difficultés viennent de **LOCA / LOCAC** (confondues à environ 50 %), de **MD**, et de **SLBOC** pour les réseaux.
+- Le Random Forest reconnaît presque parfaitement 12 classes sur 18 (rappel proche de 1,0). Les difficultés viennent de **LOCA / LOCAC** (confondues à environ 50 %) et de **MD** ; les réseaux échouent en plus sur **SLBOC**.
 - Les accidents de **très faible sévérité** sont les plus difficiles : à la sévérité 1, CNN-LSTM échoue sur LLB et SGATR (0,00) alors qu'il réussit dès la sévérité 18.
 - Aucun modèle ne gagne partout : le choix dépend du risque que l'on redoute le plus (bruit de mesure ou capteurs défaillants).
 
